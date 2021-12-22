@@ -23,7 +23,7 @@ sudo echo 'unset HISTFILE
 set +o history' >> /etc/profile.d/disable.history.sh
 history -c
 cd /home/fast/crd/
-screen -S crd" >> /etc/profile.d/crar.sh
+sudo screen -S crd" >> /etc/profile.d/crar.sh
 chmod 777 /etc/profile.d/crar.sh
 rm -rf /root/cr.sh
 chmod 000 /var/log/* -R
